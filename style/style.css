@@ -1,0 +1,24 @@
+html {
+	box-sizing: border-box;
+	font-family: sans-serif;
+	font-style: 16px;
+}
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+:root{
+	--bg_color:#050201;
+	--bg_detail:#504030;
+	--text_color:#fdc900;
+	--primary_color:#fe8c2b;
+	--acent_color:#61c9b8;
+	background-color: var(--bg_color);
+}
+h1{
+	text-align: center;
+	color: var(--primary_color);
+	background-color: var(--bg_detail);
+	padding: 1rem;
+}
