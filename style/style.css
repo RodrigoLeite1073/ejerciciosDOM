@@ -12,10 +12,11 @@ html {
 :root {
 	--bg_color: #050201;
 	--bg_detail: #504030;
+	--bg-white-alpha: #05020180;
 	--text_color: #fdc900;
 	--primary_color: #fe8c2b;
 	--acent_color: #61c9b8;
-	background-color: white;
+	background-color: var(--bg_color);
 }
 body {
 	margin: 0;
@@ -29,7 +30,7 @@ header {
 	position: sticky;
 	top: 0;
 	padding: 1rem;
-	background-color: var(--bg_color);
+	background-color: var(--bg_detail);
 	color: var(--text_color);
 }
 h1 {
@@ -43,4 +44,71 @@ h1 {
 	max-width: 1200px;
 	min-height: 100vh;
 	text-align: center;
+	color: var(--text_color);
+}
+.panel {
+	position: fixed;
+	z-index: 998;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: var(--bg-white-alpha);
+	/*transform: translateX(-100%);*/
+	transform: translate(100%, 100%) scale(0);
+	border-radius: 50%;
+	transition: 500ms ease-out;
+}
+.panel.is-active {
+	transform: translate(0%, 0%) scale(1);
+	transition: 500ms ease-out;
+	border-radius: 0%;
+}
+.panel-btn {
+	position: fixed;
+	z-index: 999;
+	bottom: 1vh;
+	right: 1vh;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--text_color);
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+	background-color: var(--bg_color);
+}
+.menu {
+	width: inherit;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	text-align: center;
+}
+.menu a {
+	padding: 0.7rem;
+	width: inherit;
+	display: block;
+	font-size: 1.5rem;
+	text-decoration: none;
+	color: var(--text_color);
+	transition: 0.3s;
+}
+.menu a:hover {
+	font-weight: bold;
+	color: var(--bg_color);
+	background-color: var(--text_color);
+}
+.hamburger:hover {
+	opacity: 1;
+}
+.hamburger.is-active:hover {
+	opacity: 1;
 }
