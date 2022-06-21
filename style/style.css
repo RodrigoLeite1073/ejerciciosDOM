@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 html {
 	box-sizing: border-box;
 	font-family: sans-serif;
@@ -12,11 +14,12 @@ html {
 :root {
 	--bg_color: #050201;
 	--bg_detail: #504030;
-	--bg-white-alpha: #05020180;
+	--bg-white-alpha: #050201c0;
 	--text_color: #fdc900;
 	--primary_color: #fe8c2b;
 	--acent_color: #61c9b8;
 	background-color: var(--bg_color);
+	font-family: sans-serif;
 }
 body {
 	margin: 0;
@@ -55,6 +58,7 @@ h1 {
 	left: 0;
 	right: 0;
 	background-color: var(--bg-white-alpha);
+	visibility: hidden;
 	/*transform: translateX(-100%);*/
 	transform: translate(100%, 100%) scale(0);
 	border-radius: 50%;
@@ -64,6 +68,7 @@ h1 {
 	transform: translate(0%, 0%) scale(1);
 	transition: 500ms ease-out;
 	border-radius: 0%;
+	visibility: visible;
 }
 .panel-btn {
 	position: fixed;
@@ -111,4 +116,18 @@ h1 {
 }
 .hamburger.is-active:hover {
 	opacity: 1;
+}
+#reloj {
+	font-family: "Press Start 2P", cursive;
+	font-size: 1.5rem;
+}
+.btn-reloj{
+	background-color: var(--acent_color);
+	color: var(--text_color);
+	font-weight: bold;
+	text-shadow: .1rem .1rem .1rem var(--bg_color);
+}
+.btn-reloj:disabled{
+	opacity: 0.6;
+	background-color: var(--bg_detail);
 }

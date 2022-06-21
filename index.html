@@ -1,47 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Ejercicios DOM</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
-		<link rel="stylesheet" href="style/style.css" />
-	</head>
-	<body>
-		<header class="header">
-			<h1>Ejercicios del DOM</h1>
-		</header>
-		<button class="panel-btn hamburger hamburger--emphatic" type="button">
-			<span class="hamburger-box">
-				<span class="hamburger-inner"></span>
-			</span>
-		</button>
-		<aside class="panel">
-			<nav class="menu">
-				<a href="#section1">Sección 01</a>
-				<a href="#section2">Sección 02</a>
-				<a href="#section3">Sección 03</a>
-				<a href="#section4">Sección 04</a>
-				<a href="#section5">Sección 05</a>
-			</nav>
-		</aside>
-			<main>
-				<section id="section1" class="section">
-					<h2>Sección 01</h2>
-				</section>
-				<section id="section2" class="section">
-					<h2>Sección 02</h2>
-				</section>
-				<section id="section3" class="section">
-					<h2>Sección 03</h2>
-				</section>
-				<section id="section4" class="section">
-					<h2>Sección 04</h2>
-				</section>
-				<section id="section5" class="section">
-					<h2>Sección 05</h2>
-				</section>
-			</main>
-		<script src="script/index.js" type="module"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios DOM</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Ejercicios del DOM</h1>
+    </header>
+    <button class="panel-btn hamburger hamburger--emphatic" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <aside class="panel">
+      <nav class="menu">
+        <a href="#section1">Reloj Digital y Alarma Sonora</a>
+        <a href="#section2">Eventos del Teclado</a>
+        <a href="#section3">Sección 03</a>
+        <a href="#section4">Sección 04</a>
+        <a href="#section5">Sección 05</a>
+      </nav>
+    </aside>
+    <main>
+      <section id="section1" class="section">
+        <h2>Reloj Digital y Alarma Sonora</h2>
+        <div id="reloj"></div>
+        <div>
+          <button class="btn-reloj" id="activar-reloj">Iniciar Reloj</button>
+          <button class="btn-reloj" id="desactivar-reloj">Detener Reloj</button>
+          <button class="btn-reloj" id="activar-alarma">Iniciar Alarma</button>
+          <button class="btn-reloj" id="desactivar-alarma">
+            Detener Alarma
+          </button>
+        </div>
+      </section>
+      <section id="section2" class="section">
+        <h2>Eventos del Teclado</h2>
+        <input type="text" name="name" id="#" />
+      </section>
+      <section id="section3" class="section">
+        <h2>Sección 03</h2>
+      </section>
+      <section id="section4" class="section">
+        <h2>Sección 04</h2>
+      </section>
+      <section id="section5" class="section">
+        <h2>Sección 05</h2>
+      </section>
+    </main>
+    <script src="script/index.js" type="module"></script>
+  </body>
 </html>
