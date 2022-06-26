@@ -12,6 +12,7 @@ html {
   box-sizing: inherit;
 }
 :root {
+  --bg_light: #fafade;
   --bg_color: #050201;
   --bg_detail: #504030;
   --bg-white-alpha: #050201c0;
@@ -70,19 +71,21 @@ h1 {
   border-radius: 0%;
   visibility: visible;
 }
-.panel-btn {
-  position: fixed;
-  z-index: 999;
+.btn-style {
   bottom: 1vh;
   right: 1vh;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--text_color);
+}
+.panel-btn {
+  position: fixed;
+  z-index: 999;
+  padding: 0;
 }
 .hamburger-inner,
 .hamburger-inner::before,
@@ -145,4 +148,47 @@ h1 {
   height: 4rem;
   border-radius: 50%;
   background-color: var(--acent_color);
+}
+
+.top-scroll-btn {
+  position: fixed;
+  z-index: 999;
+  bottom: 1vh;
+  right: calc(1vw + 4.35rem);
+  /*transform-origin: bottom right;*/
+  border: none;
+  transition: 500ms;
+}
+.top-scroll-btn span {
+  font-size: 3rem;
+}
+.top-scroll-btn:hover {
+  background-color: var(--bg_color);
+  color: var(--text_color);
+  border: thin solid var(--text_color);
+}
+.top-scroll-btn.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.dark-mode-btn {
+  position: fixed;
+  z-index: 999;
+  bottom: 1vh;
+  left: 1vw;
+  /*transform-origin: bottom right;*/
+  border: none;
+  transition: 500ms;
+  font-size: 2rem;
+}
+.dark-mode-btn:hover {
+  background-color: var(--bg_color);
+  color: var(--text_color);
+  border: thin solid var(--text_color);
+}
+
+.light-mode {
+  background-color: var(--bg_light);
+  color: var(--bg_detail);
 }
