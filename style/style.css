@@ -192,3 +192,16 @@ h1 {
   background-color: var(--bg_light);
   color: var(--bg_detail);
 }
+
+#responsive-tester * {
+  margin: 0.1rem;
+}
+
+#user-device li {
+  color: var(--acent_color);
+  font-style: italic;
+}
+#user-device li b {
+  color: var(--primary_color);
+  font-style: normal;
+}
