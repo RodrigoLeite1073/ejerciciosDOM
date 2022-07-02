@@ -4,9 +4,11 @@ import darkTheme from "./dark-theme.js";
 import userDeviceInfo from "./device-detection.js";
 import hamburgerMenu from "./menu_hamburguesa.js";
 import responsiveMedia from "./object-responsive.js";
+import networkStatus from "./red-detection.js";
 import { digitalClock, alarm } from "./reloj.js";
 import responsiveTester from "./responsive-tester.js";
 import { moveBall, shortcuts } from "./teclados.js";
+import webcam from "./webcam-detection.js";
 
 const d = document;
 
@@ -33,9 +35,13 @@ d.addEventListener("DOMContentLoaded", () => {
   responsiveTester("responsive-tester");
 
   userDeviceInfo("user-device");
+
+  webcam("webcam");
 });
 
 darkTheme(".dark-mode-btn", "light-mode");
+
+networkStatus();
 
 d.addEventListener("keydown", (e) => {
   shortcuts(e);

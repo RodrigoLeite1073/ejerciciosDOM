@@ -58,6 +58,7 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
+  overflow: auto;
   background-color: var(--bg-white-alpha);
   visibility: hidden;
   /*transform: translateX(-100%);*/
@@ -204,4 +205,25 @@ h1 {
 #user-device li b {
   color: var(--primary_color);
   font-style: normal;
+}
+
+.online,
+.offline {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: var(--acent_color);
+  color: var(--bg_color);
+}
+.offline {
+  background-color: var(--primary_color);
+}
+
+#webcam {
+  margin: 0;
+  width: 50vw;
 }
