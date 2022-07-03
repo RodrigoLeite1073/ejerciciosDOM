@@ -2,6 +2,7 @@ import topScrollButton from "./buttom_scroll.js";
 import countdown from "./cuenta_regresiva.js";
 import darkTheme from "./dark-theme.js";
 import userDeviceInfo from "./device-detection.js";
+import getGeolocation from "./geolocation.js";
 import hamburgerMenu from "./menu_hamburguesa.js";
 import responsiveMedia from "./object-responsive.js";
 import networkStatus from "./red-detection.js";
@@ -37,6 +38,7 @@ d.addEventListener("DOMContentLoaded", () => {
   userDeviceInfo("user-device");
 
   webcam("webcam");
+  getGeolocation("geolocation");
 });
 
 darkTheme(".dark-mode-btn", "light-mode");
