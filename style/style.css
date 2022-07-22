@@ -486,13 +486,13 @@ video {
   color: #fff;
   transition: 800ms;
 }
-contact-form-error.is-active {
-  display: block;
-  animation: show-message 1s 1 normal 0s ease-out both;
-}
-
 .none {
   display: none;
+}
+
+.contact-form-error.is-active {
+  display: block;
+  animation: show-message 1s 1 normal 0s ease-out both;
 }
 
 @keyframes show-message {

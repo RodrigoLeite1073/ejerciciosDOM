@@ -3,6 +3,7 @@ import countdown from "./cuenta_regresiva.js";
 import darkTheme from "./dark-theme.js";
 import userDeviceInfo from "./device-detection.js";
 import draw from "./draw.js";
+import contactFormValidation from "./form-validation.js";
 import getGeolocation from "./geolocation.js";
 import hamburgerMenu from "./menu_hamburguesa.js";
 import responsiveMedia from "./object-responsive.js";
@@ -49,6 +50,7 @@ d.addEventListener("DOMContentLoaded", () => {
   slider();
   scrollSpy();
   smartVideo();
+  contactFormValidation();
 });
 
 darkTheme(".dark-mode-btn", "light-mode");
