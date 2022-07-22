@@ -5,8 +5,8 @@ let x = 0,
 export function moveBall(e, ball, stage) {
   const $ball = d.querySelector(ball),
     $stage = d.querySelector(stage),
-    limitsBall = $ball.getBouncingClientRect(),
-    limitsStage = $stage.getBouncingClientRect();
+    limitsBall = $ball.getBouncingClientRect,
+    limitsStage = $stage.getBouncingClientRect;
 
   switch (e.keyCode) {
     case 37:

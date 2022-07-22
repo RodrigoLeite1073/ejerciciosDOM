@@ -2,12 +2,17 @@ import topScrollButton from "./buttom_scroll.js";
 import countdown from "./cuenta_regresiva.js";
 import darkTheme from "./dark-theme.js";
 import userDeviceInfo from "./device-detection.js";
+import draw from "./draw.js";
 import getGeolocation from "./geolocation.js";
 import hamburgerMenu from "./menu_hamburguesa.js";
 import responsiveMedia from "./object-responsive.js";
 import networkStatus from "./red-detection.js";
 import { digitalClock, alarm } from "./reloj.js";
 import responsiveTester from "./responsive-tester.js";
+import scrollSpy from "./scroll-spy.js";
+import searchFilter from "./search-filter.js";
+import slider from "./slider.js";
+import smartVideo from "./smart_video.js";
 import { moveBall, shortcuts } from "./teclados.js";
 import webcam from "./webcam-detection.js";
 
@@ -39,6 +44,11 @@ d.addEventListener("DOMContentLoaded", () => {
 
   webcam("webcam");
   getGeolocation("geolocation");
+  searchFilter(".card-filter", ".card");
+  draw("#winner-btn", ".player");
+  slider();
+  scrollSpy();
+  smartVideo();
 });
 
 darkTheme(".dark-mode-btn", "light-mode");

@@ -32,10 +32,12 @@ img {
 }
 header {
   position: sticky;
-  top: 0;
-  padding: 1rem;
+  z-index: 997;
+  top: 0.5rem;
+  padding: 0.5rem;
   background-color: var(--bg_detail);
   color: var(--text_color);
+  box-shadow: 0 0.3rem 0.8rem 0.2rem black;
 }
 h1 {
   margin: 0 auto;
@@ -115,6 +117,7 @@ h1 {
   color: var(--bg_color);
   background-color: var(--text_color);
 }
+
 .hamburger:hover {
   opacity: 1;
 }
@@ -226,4 +229,279 @@ h1 {
 #webcam {
   margin: 0;
   width: 50vw;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.card {
+  background-color: var(--bg_light);
+  /*font-size: 2rem;*/
+  transition: 0.3s;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card figcaption {
+  padding: 1rem;
+}
+
+.filter {
+  /*display: none;*/
+  visibility: hidden;
+  opacity: 0;
+  order: 1;
+}
+
+.player {
+  color: var(--acent_color);
+}
+
+#winner-btn {
+  background-color: var(--primary_color);
+}
+
+.slider {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem auto;
+  text-align: center;
+}
+
+.slider-slides {
+  position: relative;
+  height: 400px;
+}
+
+.slider-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1000ms ease;
+}
+
+.slider-slide > h3,
+.slider-slide > p {
+  text-shadow: 1px 1px 1.5px #000;
+}
+
+.slider-slide img {
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
+.slider-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slider-btn {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+}
+
+.slider a {
+  display: block;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  border: thin solid var(--bg_color);
+  text-decoration: none;
+  background-color: var(--bg_detail);
+  color: var(--text_color);
+  font-size: 7vw;
+  font-weight: bold;
+  transition: all 300ms ease;
+}
+
+#next {
+  position: absolute;
+  right: -11vw;
+}
+#prev {
+  position: absolute;
+  left: -11vw;
+}
+
+.slider a:hover {
+  background-color: var(--bg_light);
+}
+
+@media screen and (min-width: 720px) {
+  body {
+    display: grid;
+    grid-template:
+      "header header" 4rem
+      " main panel" auto
+      / 80% 20%;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  .panel {
+    grid-area: panel;
+    position: sticky;
+    top: 4.5rem;
+    justify-content: flex-start;
+    align-self: start;
+    transform: translate(0%, 0%) scale(1);
+    border-radius: 0%;
+    visibility: visible;
+    height: calc(100vh - 4.5rem);
+    background-color: var(--bg_color);
+  }
+
+  .panel-btn {
+    display: none;
+  }
+
+  .menu {
+    justify-content: start;
+    text-align: right;
+  }
+
+  .menu a {
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+
+  .top-scroll-btn {
+    right: initial;
+    left: calc(1vw + 4.35rem);
+  }
+  .menu a.active {
+    color: var(--bg_color);
+    background-color: var(--text_color);
+  }
+}
+#section16 {
+  --change-color: blue;
+  --blue-btn: hidden;
+  --red-btn: visible;
+  background-color: var(--change-color);
+  padding: 0;
+}
+#section16:target {
+  --change-color: red;
+  --red-btn: hidden;
+  --blue-btn: visible;
+}
+#color-container {
+  width: 100%;
+  height: 100vh;
+  padding: 4.5rem 2rem 2rem;
+}
+.change-color {
+  display: block;
+  text-decoration: none;
+  color: red;
+  visibility: var(--red-btn);
+}
+.change-color:nth-child(odd) {
+  color: blue;
+  visibility: var(--blue-btn);
+}
+#section16:target a.change-color:nth-child(even) {
+  display: none;
+}
+video {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+}
+
+.contact-form-loader svg {
+  width: 3rem;
+}
+
+.contact-form {
+  --form-ok-color: #0a0;
+  --form-error-color: #a00;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.contact-form > * {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form-response,
+.contact-form legend {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: cursive;
+  font-size: 1.5rem;
+  color: var(--bg_detail);
+}
+
+.contact-form input[type="submit"] {
+  width: 50%;
+  font-weight: bold;
+  background-color: var(--text_color);
+}
+
+.contact-form [required]:valid {
+  border: thin solid var(--form-ok-color);
+}
+
+.contact-form [required]:invalid {
+  border: thin solid var(--form-error-color);
+}
+
+.contact-form-error {
+  margin-top: -1rem;
+  font-size: 80%;
+  background-color: var(--form-error-color);
+  color: #fff;
+  transition: 800ms;
+}
+contact-form-error.is-active {
+  display: block;
+  animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.none {
+  display: none;
+}
+
+@keyframes show-message {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
 }
