@@ -31,21 +31,41 @@ export default function contactFormValidation() {
   });
 
   d.addEventListener("submit", (e) => {
-    //e.preventDefault();
+    e.preventDefault();
 
-    alert("enviando formulario");
+    //alert("enviando formulario");
 
     const $loader = d.querySelector(".contact-form-loader"),
       $response = d.querySelector(".contact-form-response");
 
     $loader.classList.remove("none");
 
-    setTimeout(() => {
+    fetch("https://formsubmit.co/ajax/peru3dblender@gmail.com", {
+      method: "POST",
+      body: new FormData(e.target),
+    })
+      .then((res) => (res.ok ? res.json() : Promise.reject(res)))
+      .then((json) => {
+        $response.innerHTML = `<p>${json.message}</p>`;
+        console.log(json);
+        $loader.classList.add("none");
+        $response.classList.remove("none");
+        $form.reset();
+      })
+      .catch((err) => {
+        console.error(err);
+        let message = err.statusText || "Ocurrió un error";
+        $response.innerHTML = `<p>Error: ${err.status}, ${message}</p>`;
+        $loader.classList.add("none");
+        $response.classList.remove("none");
+      });
+
+    /*setTimeout(() => {
       $loader.classList.add("none");
       $response.classList.remove("none");
       $form.reset();
 
       setTimeout(() => $response.classList.add("none"), 3000);
-    }, 3000);
+    }, 3000);*/
   });
 }
